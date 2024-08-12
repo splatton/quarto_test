@@ -14,9 +14,12 @@ When you click the **Render** button a document will be generated that includes 
 
 ```{r}
 f <- function() g()
+cat("Initiate f", file = stderr())
 g <- function() h()
+cat("Initiate g", file = stderr())
 h <- function() i()
-i <- function() print("Error")
+i <- function() stop("Error")
+cat("Run f", file = stderr())
 f()
 ```
 
